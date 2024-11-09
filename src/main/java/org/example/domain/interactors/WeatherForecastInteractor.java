@@ -15,11 +15,11 @@ public class WeatherForecastInteractor {
         this.forecastGateway = forecastGateway;
     }
 
-    public ForecastReportEntity getForecastReport(double latitude, double longitude) throws ReportProcessingException {
+    public ForecastReportEntity getForecastReport(double latitude, double longitude, int limit) throws ReportProcessingException {
         CoordsEntity coords = new CoordsEntity();
         ForecastReportEntity report;
         try {
-            report = forecastGateway.getForecastReportByCoords(coords);
+            report = forecastGateway.getForecastReportByCoords(coords, limit);
         } catch (GatewayUnavailableException e) {
             // TODO: залоггировать e
             throw new ReportProcessingException("Сервис погоды недоступен");

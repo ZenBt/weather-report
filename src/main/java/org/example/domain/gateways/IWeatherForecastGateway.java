@@ -8,6 +8,6 @@ import org.example.domain.gateways.exceptions.UnknownGatewayException;
 
 public interface IWeatherForecastGateway {
 
-    ForecastReportEntity getForecastReportByCoords(CoordsEntity coords) throws ApiKeyInvalidOrExpiredException, GatewayUnavailableException, UnknownGatewayException;
+    ForecastReportEntity getForecastReportByCoords(CoordsEntity coords, int limit) throws ApiKeyInvalidOrExpiredException, GatewayUnavailableException, UnknownGatewayException;
 
 }
